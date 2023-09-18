@@ -34,9 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let allPosts = ''
     posts.forEach(post => {
         allPosts += `            
-            <div class="post_item" data-id='${post.id}'>
+            <a href='/postDetail.html?id=${post.id}' class="post_item" data-id='${post.id}'>
                 <h2 class="post_title">${post.title}</h2>
-                <p class="post_text">${post.text}</p>
                 <span class="post_date_made"><strong>Дата создания:</strong> ${post.date_make}</span>
                 <span class="post_date_edit"><strong>Дата редактирования:</strong> ${post.date_edit}</span>
                 <button class="edit_btn">
@@ -49,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <button class="edit_item edit_submit_btn">Добавить пост</button>
                     </div>
                 </div>
-            </div>
+            </a>
             `
         lastId = post.id
     });

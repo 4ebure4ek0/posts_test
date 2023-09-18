@@ -47,9 +47,8 @@
   border-radius: 3px;
   padding: 20px;
   position: relative;
-}
-.container .posts_block .post_item .post_title {
-  text-align: center;
+  color: #010101;
+  text-decoration: none;
 }
 .container .posts_block .post_item .edit_btn {
   height: 30px;
