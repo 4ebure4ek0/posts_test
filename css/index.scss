@@ -44,16 +44,17 @@
         flex-direction: column;
         gap: 10px;
         .post_item {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            border: 1px solid rgba(1, 1, 1, 0.1411764706);
-            border-radius: 3px;
-            padding: 20px;
             position: relative;
-            color: #010101;
-            text-decoration: none;
-
+            a{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                border: 1px solid rgba(1, 1, 1, 0.1411764706);
+                border-radius: 3px;
+                padding: 20px;
+                color: #010101;
+                text-decoration: none;
+            }
             .edit_btn {
                 height: 30px;
                 width: 30px;

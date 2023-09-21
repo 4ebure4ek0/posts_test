@@ -11,8 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         text: ''
     }
 
-    posts = JSON.parse(localStorage.getItem('posts'))
-    if (!posts) {
+    if (!localStorage.getItem('posts')) {
         localStorage.setItem('posts', JSON.stringify([
             {
                 "id": 1,
@@ -30,16 +29,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         ]))
     }
+    posts = JSON.parse(localStorage.getItem('posts'))
 
     let allPosts = ''
     posts.forEach(post => {
         allPosts += `            
-            <a href='/postDetail.html?id=${post.id}' class="post_item" data-id='${post.id}'>
-                <h2 class="post_title">${post.title}</h2>
-                <span class="post_date_made"><strong>Дата создания:</strong> ${post.date_make}</span>
-                <span class="post_date_edit"><strong>Дата редактирования:</strong> ${post.date_edit}</span>
+            <div class="post_item" data-id='${post.id}'>
+                <a href='/postDetail.html?id=${post.id}'>
+                    <h2 class="post_title">${post.title}</h2>
+                    <span class="post_date_made"><strong>Дата создания:</strong> ${post.date_make}</span>
+                    <span class="post_date_edit"><strong>Дата редактирования:</strong> ${post.date_edit}</span>
+                </a>
                 <button class="edit_btn">
-                    <img src="img/edit.png" alt="Редактировать">
+                    <img class="edit_img" src="img/edit.png" alt="Редактировать">
                 </button>
                 <div class="edit_form">
                     <div class="edit_form_block">
@@ -48,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <button class="edit_item edit_submit_btn">Добавить пост</button>
                     </div>
                 </div>
-            </a>
+            </div>
             `
         lastId = post.id
     });
